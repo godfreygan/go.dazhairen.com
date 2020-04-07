@@ -1,0 +1,125 @@
+site_name: Go语言学习笔记
+site_description: Go语言学习记录与分享，纯属个人见解，不喜勿喷～
+site_author: Godfrey
+site_url: http://go.dazhairen.com/
+copyright: <a href="http://beian.miit.gov.cn/" target="blank">桂ICP备18007532号</a>
+
+theme:
+  name: material
+  language: 'zh'
+  palette:
+    primary: 'Green'
+    accent: 'Pink'
+  feature:
+    tabs: false
+
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+      linenums: false
+  - toc:
+      permalink: true
+  - footnotes
+  - meta
+  - def_list
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_png
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist
+  - pymdownx.tilde
+
+extra_javascript:
+  - 'assets/js/baidu-tongji.js'
+  - 'assets/js/extra.js'
+  - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML'
+
+
+nav:
+  - 一. 介绍及安装:
+      - 1. 简介: intro/index.md
+      - 2. 开发环境部署:
+          - 2.0 开发环境部署: intro/install.md
+          - 2.1. 在Windows平台安装: intro/windows-install.md
+          - 2.2. 在Linux平台安装: intro/linux-install.md
+          - 2.3. 在MacOS平台安装: intro/macos-install.md
+      - 3. Go语言的开发工具: intro/tools.md
+  - 二. 程序结构:
+      - 1. workspace: structure/workspace.md
+      - 2. hello world: structure/helloworld.md
+      - 3. 编译和运行: structure/buildrun.md
+      - 4. 内置测试包: structure/gotest.md
+  - 三. 基础:
+      - 1. 包: basic/package.md
+      - 2. 基本元素: basic/element.md
+      - 3. 常量: basic/const.md
+      - 4. 变量:
+          - 4.1. 声明: basic/variable_declare.md
+          - 4.2. 作用域: basic/variable_scope.md
+      - 5. 数据类型: basic/variable-type.md
+      - 6. 数据类型扩展: basic/variable-type-2.md
+      - 7. 流程控制: basic/flow.md
+  - 四. 进阶:
+      - 1. 函数: progress/function.md
+      - 2. 函数进阶: progress/function-2.md
+      - 3. 复合数据类型:
+          - 3.0. 复合数据类型: progress/complex_type.md
+          - 3.1. 数组: progress/complex_type-array.md
+          - 3.2. 切片: progress/complex_type-slice.md
+          - 3.3. 映射: progress/complex_type-map.md
+      - 4. 结构体: progress/struct.md
+  - 五. 方法、接口和反射:
+      - 1. 结构体方法: method/method_main.md
+      - 2. 接口: method/interface_main.md
+      - 3. 接口使用: method/interface_application.md
+      - 4. 接口进阶: method/interface_progress.md
+      - 5. 反射: method/reflect.md
+  - 六. 并发编程:
+      - 1. 并发编程概念: concurrency/goroutine.md
+      - 2. channel:
+          - 2.1. 基本使用: concurrency/channel_main.md
+          - 2.2. 缓冲机制: concurrency/channel_buffer.md
+          - 2.3. 关闭: concurrency/channel_close.md
+          - 2.4. 结合select-case: concurrency/channel_select.md
+          - 2.5. 读写类型: concurrency/channel_rw.md
+      - 3. 同步(sync):
+          - 3.1. 互斥锁(Mutex): concurrency/sync_mutex.md
+          - 3.2. 读写锁(RWMutex): concurrency/sync_rwmutex.md
+          - 3.3. WaitGroup: concurrency/sync_waitgroup.md
+          - 3.4. 条件变量(Cond): concurrency/sync_cond.md
+  - 七. 网络编程:
+      - 1. Socket编程: network/socket.md
+      - 2. HTTP编程: network/http.md
+      - 3. RPC编程: network/rpc.md
+      - 4. 数据库: network/database.md
+      - 5. 使用Cookie: network/cookie.md
+  - 八. I/O编程:
+      - 1. 输入输出: io/input_output.md
+      - 2. 文件系统: io/file_system.md
+      - 3. 数据结构与算法: io/algorithms.md
+  - 九. 文件处理:
+      - 1. 文件操作: files/operation.md
+      - 2. XML处理: files/xml.md
+      - 3. JSON处理: files/json.md
+      - 4. 日志记录: files/logs.md
+      - 5. 压缩: files/compress.md
+  - 十. 内存管理:
+      - 1. 内存分配: memory/allocation.md
+      - 2. TCMalloc: memory/tcmalloc.md
+      - 3. Mspan（内存管理器）: memory/mspan.md
+      - 4. 垃圾回收: memory/grabage_collection.md
+  - 十一. 其他:
+      - 1. 字符串处理: other/string.md
+      - 2. 并发、事件驱动等: other/concurrent.md
+  - 十二. 结语:
+      - 联系方式: contact.md
