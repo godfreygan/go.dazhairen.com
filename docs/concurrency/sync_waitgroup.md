@@ -47,7 +47,6 @@ func main() {
 	fmt.Printf("over:             %+v\n", wg)
 }
 ```
-
 输出：
 ```text
 init:             {noCopy:{} state1:[0 0 0]}

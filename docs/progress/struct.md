@@ -46,6 +46,13 @@ func main() {
     fmt.Println(ms)
 }
 ```
+输出：
+```text
+int: 10
+float: 15.500000
+string: Google
+&{10 15.5 Google}
+```
 
 
 ## 结构体传参
@@ -91,6 +98,13 @@ func operateEmployee2(employee *Employee) {
     employee.Id = 10002
 }
 ```
+输出：
+```text
+形式传参之前，employee Id: 10001
+形式传参之后，employee Id: 10001
+指针传参之前, employee Id: 10001
+指针传参之后, employee Id: 10002
+```
 
 
 ## 带标签的结构体
@@ -130,6 +144,13 @@ func refTag(tt TagType, ix int) {
     ixField := ttType.Field(ix)
     fmt.Printf("%v\n", ixField.Tag)
 }
+```
+输出：
+```text
+姓名
+年龄
+身高
+体重
 ```
 
 
@@ -175,6 +196,15 @@ func main() {
     fmt.Println("two2 is: ", two2)
 }
 ```
+输出：
+```text
+two.b is: 6
+two.c is: 7.500000
+two.int is: 100
+two.in1 is: 5
+two.in2 is: 10
+two2 is:  {8 9.9 55 {6 9}}
+```
 
 
 ## 内嵌结构体
@@ -201,6 +231,11 @@ func main() {
     fmt.Println(b.ax, b.ay, b.bx, b.by)
     fmt.Println(b.A)
 }
+```
+输出：
+```text
+1 2 3 4
+{1 2}
 ```
 
 
@@ -238,4 +273,8 @@ func main() {
 	c.A.a = 1		// 针对某个内嵌类的某个字段进行赋值
 	fmt.Println(c)
 }
+```
+输出：
+```text
+&{{1} {0}}
 ```

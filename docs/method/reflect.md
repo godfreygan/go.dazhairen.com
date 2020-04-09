@@ -42,6 +42,16 @@ func main() {
     fmt.Println(y)
 }
 ```
+输出：
+```text
+type:  float64
+value:  3.4
+kind:  float64
+value:  3.4
+3.4
+value is 3.40e+00
+3.4
+```
 
 
 ## 通过反射修改设置值
@@ -75,6 +85,15 @@ func main() {
     fmt.Println(v.Interface())
     fmt.Println(v)
 }
+```
+输出：
+```text
+v： false
+v的类型： *float64
+v： false
+v的Elem是： 3.1415
+3.1415
+3.1415
 ```
 上述代码中，错误的原因是v不是可设置的（并不是说值不可寻址），是否可设置是值的一个属性，并且不是所有的反射值都有这个属性：可以使用CanSet()方法测试是否可设置。
 
@@ -119,6 +138,15 @@ func main() {
     results := value.Method(0).Call(nil)
     fmt.Println(results)
 }
+```
+输出：
+```text
+main.NotknowType
+struct
+Filed 0: Google
+Filed 1: Go
+Filed 2: Code
+[Google-Go-Code]
 ```
 
 
@@ -174,4 +202,8 @@ func print(args ...interface{}) {
 func main() {
     print(Day(1), "温度是", Celsius(18.36))
 }
+```
+输出：
+```text
+星期二 温度是 18.4 度
 ```

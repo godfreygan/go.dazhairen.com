@@ -12,9 +12,9 @@ $ mkdir -p $GOPATH/src/go.local/hello-world/
 
 ```go
 package main
-import (
-    "fmt"
-)
+
+import "fmt"
+
 func main() {
     fmt.Println("Hello World")
 }

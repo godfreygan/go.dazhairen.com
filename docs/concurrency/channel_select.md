@@ -7,7 +7,9 @@ select 会阻塞，直到条件分支中的某个可以继续执行，这时就�
 
 ```go
 package main
+
 import "fmt"
+
 func main() {
     a := make(chan int, 1024)
     b := make(chan int, 1024)
@@ -23,6 +25,19 @@ func main() {
         }
     }
 }
+```
+输出：
+```text
+第0次，from b
+第1次，from a
+第2次，from a
+第3次，from a
+第4次，from b
+第5次，from b
+第6次，from a
+第7次，from b
+第8次，from b
+第9次，from b
 ```
 
 
@@ -67,6 +82,19 @@ func main() {
 	send(ch1, ch2, ch3)
 }
 ```
+输出：
+```text
+send 0 to ch1
+send 1 to ch2
+send 2 to ch1
+send 3 to ch2
+send 4 to ch2
+send 5 to ch2
+send 6 to ch2
+send 7 to ch2
+send 8 to ch2
+send 9 to ch2
+```
 
 
 ## select支持default
@@ -91,4 +119,8 @@ func main() {
 		fmt.Printf("In default after %v\n", time.Since(start))
 	}
 }
+```
+输出：
+```text
+In default after 3.424µs
 ```

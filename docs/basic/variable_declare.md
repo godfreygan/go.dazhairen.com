@@ -15,32 +15,38 @@ package main
 import "fmt"
 
 func main() {
-    // 定义一个变量a为int型
-    var a int
-    
-    // 定义一个变量b为bool型
-    var b bool
-    
-    // 定义一个变量str为string型
-    var str string
-    
-    // 定义两个变量a、b为int型
-    var d,e int
-    
-    // 与常量一样，同时定义多个
-    var (
-        i,j int
-        m bool
-        name string
-    )
-    
-    // 定义变量并赋值
-    var h int = 100
-    var x,y int = 10,20
-    var name,age = "Godfrey",18
+	// 定义一个变量a为int型
+	var a int
 
-    fmt.Println(h, x, y, name, age)
+	// 定义一个变量b为bool型
+	var b bool
+
+	// 定义一个变量str为string型
+	var str string
+
+	// 定义两个变量d、e为int型
+	var d, e int
+
+	// 与常量一样，同时定义多个
+	var (
+		i, j int
+		m    bool
+		sex  string
+	)
+	fmt.Println(a, b, str, d, e, i, j, m, sex)
+
+	// 定义变量并赋值
+	var h int = 100
+	var x, y int = 10, 20
+	var name, age = "Godfrey", 18
+
+	fmt.Println(h, x, y, name, age)
 }
+```
+输出：
+```text
+0 false  0 0 0 0 false 
+100 10 20 Godfrey 18
 ```
 
 示例2：
@@ -59,22 +65,28 @@ var a = 1
 // a := 10
 
 func main() {
-    b := 2          // 4. 只能在函数体内部使用简写形式
-    a = 100         // 5. 把10赋值给a是没有语法问题的
-    fmt.Println(a, b)
-    
-    a := "hello"    // 6. 函数体内部属于另一个代码块，可以再次声明变量a，也可以改变变量类型
-    fmt.Println(a)
-    
-    /* 7. 不能在调用之后定义变量，即不能使用未定义的变量 */
-    // fmt.Println(d)
-    // d := 4
-    
-    fmt.Println(c)
+	b := 2          // 4. 只能在函数体内部使用简写形式
+	a = 100         // 5. 把100赋值给a是没有语法问题的
+	fmt.Println(a, b)
+
+	a := "hello"    // 6. 函数体内部属于另一个代码块，可以再次声明变量a，也可以改变变量类型
+	fmt.Println(a)
+
+	/* 7. 不能在调用之后定义变量，即不能使用未定义的变量 */
+	// fmt.Println(d)
+	// d := 4
+
+	fmt.Println(c)
 }
 
 // 8. 全局定义不限定位置，在函数外即可
 var c = 0
+```
+输出：
+```text
+100 2
+hello
+0
 ```
 
 使用 := 可以快速创建一个函数内部的变量，包括初始化声明与复制两大部分。以下几点需要注意：
@@ -115,4 +127,10 @@ func main() {
 func test()(a, b, c int){
     return 1, 2, 3
 }
+```
+输出：
+```text
+7
+2 3
+1 2
 ```

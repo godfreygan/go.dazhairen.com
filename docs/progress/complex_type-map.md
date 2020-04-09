@@ -57,6 +57,13 @@ func main() {
     }
 }
 ```
+输出：
+```text
+Key: ForestGreen, Value: #228b22
+Key: AliceBlue, Value: #f0f8ff
+Key: Coral, Value: #ff7f50
+Key: DarkGray, Value: #a9a9a9
+```
 
 ### 删除
 
@@ -78,6 +85,11 @@ func main() {
     delete(colors, "Coral")
     fmt.Println(colors)
 }
+```
+输出：
+```text
+ap[AliceBlue:#f0f8ff Coral:#ff7f50 DarkGray:#a9a9a9 ForestGreen:#228b22]
+map[AliceBlue:#f0f8ff DarkGray:#a9a9a9 ForestGreen:#228b22]
 ```
 
 
@@ -117,4 +129,14 @@ func main() {
 func removeColor(colors map[string]string, key string) {
     delete(colors, key)
 }
+```
+输出：
+```text
+Key: AliceBlue, Value: #f0f8ff
+Key: Coral, Value: #ff7f50
+Key: DarkGray, Value: #a9a9a9
+Key: ForestGreen, Value: #228b22
+Key: AliceBlue, Value: #f0f8ff
+Key: DarkGray, Value: #a9a9a9
+Key: ForestGreen, Value: #228b22
 ```

@@ -56,6 +56,12 @@ func Max(a, b int)(maxNum int) {
     return maxNum
 }
 ```
+输出：
+```text
+max(1, 2)=2
+max(1, 3)=3
+max(2, 3)=3
+```
 在上面例子中有两个功能相同的函数，其中一个为max，另一个是Max，这两个函数的区别在于外部是否能够调用。
 
 
@@ -89,6 +95,12 @@ func main() {
 	fmt.Println(n)
 }
 ```
+输出：
+```text
+50 600
+17
+24
+```
 
 
 ## 函数作为参数
@@ -106,7 +118,9 @@ func f1(f2(a, b))
 示例：
 ```go
 package main
+
 import "fmt"
+
 func pipe(ff func() int) int {
     return ff()
 }
@@ -117,6 +131,7 @@ type FormatFunc func(s string, x, y int) string
 func format(ff FormatFunc, s string, x, y int) string {
     return ff(s, x, y)
 }
+
 func main() {
     s1 := pipe(func() int { return 100 })
     s2 := format(func(s string, x, y int) string {
@@ -124,6 +139,10 @@ func main() {
     }, "%d, %d", 10, 20)
     fmt.Println(s1, s2)
 }
+```
+输出：
+```text
+100 10, 20
 ```
 
 
@@ -176,6 +195,12 @@ func main() {
     fmt.Println("even：", even)
 }
 ```
+输出：
+```text
+slice= [2 1 9 6 7 3]
+odd： [1 9 7 3]
+even： [2 6]
+```
 
 
 ## 可变参数
@@ -225,6 +250,11 @@ func main() {
     fmt.Printf("年龄最大的是%d岁\n", age)
 }
 ```
+输出：
+```text
+年龄最小的是0岁
+年龄最大的是9岁
+```
 
 
 ## 函数参数不支持默认值
@@ -256,6 +286,13 @@ func main () {
 	foo("Jerry", "Rose")
 }
 ```
+输出：
+```text
+Tom
+
+Jerry
+Rose
+```
 
 
 ## 匿名函数
@@ -278,6 +315,10 @@ func main() {
         return sum
     }(100)
 }
+```
+输出：
+```text
+5050
 ```
 
 
@@ -317,6 +358,11 @@ func Add2(a int) func(b int) int {
     }
 }
 ```
+输出：
+```text
+5
+9
+```
 
 示例2：
 ```go
@@ -342,6 +388,15 @@ func adder() func(int) int {
         return x
     }
 }
+```
+输出：
+```text
+x= 0  ,d= 1
+1
+x= 1  ,d= 2
+3
+x= 3  ,d= 3
+6
 ```
 
 
@@ -369,6 +424,10 @@ func main() {
     fmt.Printf("%d的阶乘是%d\n", i, Factorial(uint64(i)))
 }
 ```
+输出：
+```text
+15的阶乘是1307674368000
+```
 
 示例2，斐波那契数列：
 ```go
@@ -389,6 +448,10 @@ func main() {
         fmt.Printf("%d\t", fibonacci(i))
     }
 }
+```
+输出：
+```text
+0       1       1       2       3       5       8       13      21      34
 ```
 
 

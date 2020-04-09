@@ -14,18 +14,22 @@
 ??? note "例1. 包级别的变量能否被函数使用?"
 	```go
 	package main
+
 	import "fmt"
+    
 	var number int = 100
+    
 	func foo() {
 	    fmt.Println(number)
 	}
+    
 	func main() {
 	    foo()
 	}
 	```
 
 	输出
-	```
+	```text
 	100
 	```
 
@@ -34,11 +38,15 @@
 ??? note "例2. 包级别的函数有没有顺序要求?"
 	```go
 	package main
+
 	import "fmt"
+    
 	var number int = 100
+    
 	func main() {
 	    foo()
 	}
+    
 	func foo() {
 	    fmt.Println(number)
 	}
@@ -54,10 +62,13 @@
 ??? note "例3. 一个函数里的变量能否被包级别的另一个函数使用?"
 	```go
 	package main
+
 	import "fmt"
+    
 	func foo() {
 	    fmt.Println(number)
 	}
+    
 	func main() {
 	    var number int = 100
 	    foo()
@@ -74,7 +85,9 @@
 ??? note "例4. 一个函数里的变量能否被内嵌的函数使用?"
 	```go
 	package main
+
 	import "fmt"
+    
 	func main() {
 	    var number int = 100
 	    foo := func () {
@@ -94,7 +107,9 @@
 ??? note "例5. 函数内变量的声明是否有顺序要求?"
 	```go
 	package main
+
 	import "fmt"
+    
 	func main() {
 	    foo := func () {
 	        fmt.Println(number)
@@ -114,8 +129,11 @@
 ??? note "例6. 包级别的变量能否在函数内部的内嵌函数使用?"
 	```go
     package main
+
     import "fmt"
+    
 	var number int = 100
+    
 	func main() {
 	    foo := func () {
 	        number = 200
@@ -135,7 +153,9 @@
 ??? note "例7. 函数嵌套函数，是否可以使用外部定义的变量?"
 	```go
     package main
+
     import "fmt"
+    
 	func main() {
 	    number := 1
 	    foo := func () {
@@ -159,7 +179,9 @@
 ??? note "例8. 是否存在不同作用域，但名字相同的变量?"
 	```go
 	package main
+
     import "fmt"
+    
     func main() {
 	    number := 1				// ①
         foo := func () {
@@ -189,7 +211,9 @@
 ??? note "例9. 若一开始就声明同名的变量名，那么还能否使用外部同名变量?"
 	```go
 	package main
+
     import "fmt"
+    
     func main() {
         number := 1				// ①
         foo := func () {

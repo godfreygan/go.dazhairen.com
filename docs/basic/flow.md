@@ -25,7 +25,11 @@ func main() {
     fmt.Printf("a的值是：%d\n", a)
 }
 ```
-
+输出：
+```text
+a大于80
+a的值是：100
+```
 
 ## 选择语句
 
@@ -52,7 +56,7 @@ func main() {
     default:
         grade = "D"
     }
-    fmt.Println("你的成绩为%d，成绩等级为%s\n", marks, grade)
+    fmt.Printf("你的成绩为%d，成绩等级为%s\n", marks, grade)
     
     switch {
     case grade == "A":
@@ -67,6 +71,13 @@ func main() {
     fmt.Printf("你的成绩等级：%s\n", grade)
 }
 ```
+输出：
+```text
+你的成绩为90，成绩等级为A
+成绩优秀
+你的成绩等级：A
+```
+
 
 ### select语句
 
@@ -93,6 +104,19 @@ func main() {
         }
     }
 }
+```
+输出：
+```text
+第0次，from a
+第1次，from b
+第2次，from b
+第3次，from a
+第4次，from b
+第5次，from b
+第6次，from b
+第7次，from a
+第8次，from b
+第9次，from b
 ```
 上述，同时在a和b中选择，哪个有内容就从哪个读，由于channel的读写是阻塞操作，使用select语句可以避免单个channel的阻塞。
 
@@ -133,7 +157,46 @@ func main() {
         a++
         fmt.Printf("a的值是：%d\n", a)
     }
+    
+	fmt.Printf("\n")
+
+	// for不跟子语句，在循环内设置条件和递增量
+	m := 0
+	n := 5
+	for {
+		if m >= n {
+			break
+		}
+		m++
+		fmt.Printf("m的值是：%d\n", m)
+	}
 }
+```
+输出：
+```text
+i的值是：0
+i的值是：1
+i的值是：2
+i的值是：3
+i的值是：4
+
+j的值是：1
+j的值是：2
+j的值是：3
+j的值是：4
+j的值是：5
+
+a的值是：1
+a的值是：2
+a的值是：3
+a的值是：4
+a的值是：5
+
+m的值是：1
+m的值是：2
+m的值是：3
+m的值是：4
+m的值是：5
 ```
 
 ### for-range语句
@@ -162,6 +225,21 @@ func main() {
         fmt.Println(i)
     }
 }
+```
+输出：
+```text
+字符串第0个字符的值为a
+字符串第1个字符的值为b
+字符串第2个字符的值为c
+字符串第3个字符的值为z
+字符的值为a
+字符的值为b
+字符的值为c
+字符的值为z
+0
+1
+2
+3
 ```
 
 
@@ -207,6 +285,20 @@ func main() {
     }
 }
 ```
+输出：
+```text
+5
+5
+5
+5
+5
+
+4
+3
+2
+1
+0
+```
 
 
 ## 标签
@@ -235,4 +327,10 @@ BREAK:
     fmt.Println("break")
 }
 ```
-
+输出：
+```text
+0
+1
+2
+break
+```

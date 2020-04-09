@@ -34,9 +34,7 @@ func main() {
 	time.Sleep(1 * time.Second)
 }
 ```
-
-输出
-
+输出：
 ```text
 chan int
 send: chan<- int

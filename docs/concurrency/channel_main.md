@@ -28,6 +28,11 @@ func main() {
 	fmt.Printf("%T %v\n", ch2, ch2)
 }
 ```
+输出：
+```text
+chan int <nil>
+chan int 0xc000080060
+```
 
 
 ## 管道方向
@@ -62,6 +67,11 @@ func main() {
     fmt.Println("receive:", res)
 }
 ```
+输出：
+```text
+send: 8
+receive: 8
+```
 
 发送和接收数据应当在并行线上，而不能是串行的，因为发送和接收都会阻塞，如果串行，就会死锁（就是一个一直阻塞在那等对端）。  
 但go在执行时会报错，即使编译通过，比如：
@@ -75,9 +85,7 @@ func main() {
 	<-ch
 }
 ```
-
 报错：
-
 ```text
 fatal error: all goroutines are asleep - deadlock!
 ```

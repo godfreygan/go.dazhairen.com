@@ -43,3 +43,9 @@ func main() {
 	fmt.Println("3.len:", len(c))
 }
 ```
+输出：
+```text
+1.len: 0
+2.len: 34
+3.len: 32
+```

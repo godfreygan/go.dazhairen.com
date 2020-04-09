@@ -38,6 +38,15 @@ func main() {
     }
 }
 ```
+输出：
+```text
+Array at index 0 is 1
+Array at index 1 is 2
+Array at index 2 is 3
+Array at index 3 is 4
+Array at index 4 is 0
+```
+
 
 
 ## 修改
@@ -83,6 +92,13 @@ func main() {
     fmt.Println(array4)
 }
 ```
+输出：
+```text
+[[0 0] [0 0] [0 0] [0 0]]
+[[2 4] [6 8] [10 12] [14 16]]
+[[0 0] [100 200] [0 0] [110 120]]
+[[0 0] [60 0] [0 0] [0 79]]
+```
 
 和一维数组一样，通过数组下标可以修改或访问数组元素：
 ```go
@@ -95,6 +111,10 @@ func main() {
     array[1][0] = 100
     fmt.Println(array[1][0])
 }
+```
+输出：
+```text
+100
 ```
 
 

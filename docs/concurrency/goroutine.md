@@ -55,3 +55,13 @@ func shortWait() {
 	fmt.Printf("shortWait function end：%v\n", time.Now().Unix())
 }
 ```
+输出：
+```text
+main function begin：1586445831
+main function sleep：1586445831
+longWait function begin：1586445831
+shortWait function begin：1586445831
+shortWait function end：1586445832
+longWait function end：1586445836
+main function end：1586445841
+```

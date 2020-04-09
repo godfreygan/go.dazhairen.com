@@ -28,6 +28,12 @@ func main() {
 	fmt.Printf("%+v\n", mutex)
 }
 ```
+输出：
+```text
+{state:0 sema:0}
+{state:1 sema:0}
+{state:0 sema:0}
+```
 
 
 ## 使用
@@ -77,9 +83,7 @@ func main() {
 	fmt.Println(c.Value("somekey"))
 }
 ```
-
-输出
-
+输出：
 ```text
 3. Inc lock.
 3. Inc unlock.
@@ -152,7 +156,6 @@ func main() {
 	fmt.Println(c.v["somekey"])
 }
 ```
-
 输出：
 ```text
 1
@@ -207,9 +210,7 @@ func main() {
 	fmt.Println(c.Value("somekey"))
 }
 ```
-
-有时候输出
-
+输出：
 ```text
 1. Inc lock.
 1. Inc unlock.
@@ -260,6 +261,12 @@ func main() {
 	time.Sleep(1 * time.Second)
 	fmt.Printf("%+v\n", s)
 }
+```
+输出：
+```text
+{v:1 mux:{state:0 sema:0}}
+{v:1 mux:{state:1 sema:0}}
+{v:1 mux:{state:0 sema:0}}
 ```
 
 上述代码中，可以一个routine里锁定，另一个routine里解锁。因为锁只和具体变量关联，和routine无关，只要这个变量是共享的，比如通过指针传递，或者全局变量都可以。

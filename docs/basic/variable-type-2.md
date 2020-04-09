@@ -25,6 +25,11 @@ func main() {
     fmt.Printf("mean2的值为：%d\n", mean2)
 }
 ```
+输出：
+```text
+mean的值为：3.333333
+mean2的值为：3
+```
 
 
 ## 自定义类型
@@ -73,13 +78,19 @@ func main() {
     // 将a2声明为IntAlias类型
     var a2 IntAlias
     // 查看a2的类型名
-    fmt.Println("a2的类型为：%T\n", a2)
+    fmt.Printf("a2的类型为：%T\n", a2)
     
     a = 100
     var a3 int = 200
     //z := a + a3   // 编译报错，不同类型
     fmt.Printf("a的类型为：%T，a3的类型为：%T\n", a, a3)
 }
+```
+输出：
+```text
+a的类型为：main.NewInt
+a2的类型为：int
+a的类型为：main.NewInt，a3的类型为：int
 ```
 
 
@@ -94,13 +105,22 @@ package main
 import "fmt"
 
 func main() {
-    a := 20
-    ap := &a
-    fmt.Printf("a的地址：%x\n", &a)
-    fmt.Printf("ap的地址：%x\n", ap)
-    fmt.Printf("a的值：%d，*ap的值：%d\n", a, *ap)
+	a := 20
+	ap := &a
+	fmt.Printf("a的地址：%x\n", &a)
+	fmt.Printf("ap的地址：%x\n", &ap)
+	fmt.Printf("ap指向的地址：%x\n", ap)
+	fmt.Printf("a的值：%d，*ap的值：%d\n", a, *ap)
 }
 ```
+输出：
+```text
+a的地址：c0000a8008
+ap的地址：c0000a2018
+ap指向的地址：c0000a8008
+a的值：20，*ap的值：20
+```
+
 
 在定义好指针变量后，编译器为其分配一个nil值，防止指针没有确切的地址分配。
 此外还可定义指针的指针，即指针指向另一个指针，格式：`var ptr* *int`
@@ -124,6 +144,8 @@ func main() {
     a指向0(int)，而ap指向a的地址，所以 *ap == a
     ap作为指针，本身也存在地址，&ap取的就是ap本身的地址
     */
+    
+    fmt.Printf("\n")
     
     b := 10
     bp := &b
@@ -149,4 +171,21 @@ func main() {
     8. *bpp指向bp，*bp指向b，故**bpp也指向b，所以 **bpp=10
     */
 }
+```
+输出：
+```text
+a-->nil：0
+a-->nil：c00000e028
+ap-->a：c00000e028
+ap-->a-->nil：0
+&ap-->ap：c00000e030
+
+b：10
+&b：c000018070
+bp：c000018070
+*bp：10
+&bp：c00000e040
+bpp：c00000e040
+*bpp：c000018070
+**bpp：10
 ```

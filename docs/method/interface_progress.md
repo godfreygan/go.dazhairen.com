@@ -85,6 +85,11 @@ func (ci *Circle) Area() float64 {
 	return ci.radius * ci.radius * math.Pi
 }
 ```
+输出：
+```text
+areaIntf的类型是：*main.Square
+areaIntf 不含类型为 Circle 的变量
+```
 
 ### 类型判断
 
@@ -136,6 +141,10 @@ func (sq *Square) Area() float64 {
 func (ci *Circle) Area() float64 {
 	return ci.radius * ci.radius * math.Pi
 }
+```
+输出：
+```text
+Square类型的 *main.Square 值为：&{5}
 ```
 
 
