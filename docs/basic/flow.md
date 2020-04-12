@@ -105,7 +105,7 @@ func main() {
     }
 }
 ```
-输出：
+有时会输出：
 ```text
 第0次，from a
 第1次，from b
@@ -127,7 +127,10 @@ func main() {
 
 for语句可以根据指定的条件重复执行其内部的代码块，这个判断条件一般是由for关键字后面的子语句给出的。
 for后面的三个子语句我们称为：初始化子语句、条件子语句和后置子语句，这三个不能颠倒顺序。
-其中条件子语句是必须的，条件子语句会返回一个布尔值，true则执行代码块，false则跳出循环。
+其中条件子语句可以放在循环内部，条件子语句会返回一个布尔值，true则执行代码块，false则跳出循环。
+
+!!! note "注意"
+for中的条件语句，如果没有写，或者没有中断情况，会造成程序死循环。开发人员应根据实际情况酌情开发。
 
 ```go
 package main
@@ -164,10 +167,10 @@ func main() {
 	m := 0
 	n := 5
 	for {
-		if m >= n {
+		m++
+		if m > n {
 			break
 		}
-		m++
 		fmt.Printf("m的值是：%d\n", m)
 	}
 }
@@ -264,11 +267,11 @@ var i = 0
 var j = 0
 
 func print(i int) {
-    fmt.Println(i)
+    fmt.Printf("print：%d\n", i)
 }
 
 func print2() {
-    fmt.Println(j)
+    fmt.Printf("print2：%d\n", j)
 }
 
 func main() {

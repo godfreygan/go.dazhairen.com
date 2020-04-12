@@ -98,10 +98,26 @@ nav:
           - 3.3. WaitGroup: concurrency/sync_waitgroup.md
           - 3.4. 条件变量(Cond): concurrency/sync_cond.md
   - 七. 网络编程:
-      - 1. Socket编程: network/socket.md
+      - 1. Socket编程:
+          - 1.1. Socket通信: network/socket-1.md
+          - 1.2. Go语言支持IP类型: network/socket-2.md
+          - 1.3. Dial()函数: network/socket-3.md
+          - 1.4. TCP Socket: network/socket-4.md
+          - 1.5. UDP Scoket: network/socket-5.md
       - 2. HTTP编程: network/http.md
-      - 3. RPC编程: network/rpc.md
-      - 4. 数据库: network/database.md
+      - 3. RPC编程:
+          - 3.1. 简述: network/rpc-1.md
+          - 3.2. Go RPC: network/rpc-2.md
+          - 3.3. HTTP RPC: network/rpc-3.md
+          - 3.4. TCP RPC: network/rpc-4.md
+          - 3.5. JSON RPC: network/rpc-5.md
+          - 3.6. RPC接口: network/rpc-6.md
+      - 4. 数据库:
+          - 4.1. database/sql接口: network/database.md
+          - 4.2. MySQL数据库: network/database-1.md
+          - 4.3. SQLite数据库: network/database-2.md
+          - 4.4. PostgreSQL数据库: network/database-3.md
+          - 4.5. NoSQL数据库: network/database-4.md
       - 5. 使用Cookie: network/cookie.md
   - 八. I/O编程:
       - 1. 输入输出: io/input_output.md

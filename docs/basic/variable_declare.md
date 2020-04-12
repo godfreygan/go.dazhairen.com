@@ -12,20 +12,28 @@ var 是声明变量的关键字，name 是变量名，type 是变量的类型。
 ```go
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"reflect"
+)
 
 func main() {
 	// 定义一个变量a为int型
 	var a int
+	fmt.Printf("a的类型为：%s，a的值为：%v\n", reflect.TypeOf(a), a)
 
 	// 定义一个变量b为bool型
 	var b bool
+	fmt.Printf("b的类型为：%s，b的值为：%v。\n", reflect.TypeOf(b), b)
 
 	// 定义一个变量str为string型
 	var str string
+	fmt.Printf("str的类型为：%s，str的值为：\"%v\"\n", reflect.TypeOf(str), str)
 
 	// 定义两个变量d、e为int型
 	var d, e int
+	fmt.Printf("d的类型为：%s，d的值为：%v\n", reflect.TypeOf(d), d)
+	fmt.Printf("e的类型为：%s，e的值为：%v\n", reflect.TypeOf(e), e)
 
 	// 与常量一样，同时定义多个
 	var (
@@ -33,20 +41,31 @@ func main() {
 		m    bool
 		sex  string
 	)
-	fmt.Println(a, b, str, d, e, i, j, m, sex)
+	fmt.Printf("i的类型为：%s，i的值为：%v\n", reflect.TypeOf(i), i)
+	fmt.Printf("j的类型为：%s，j的值为：%v\n", reflect.TypeOf(j), j)
+	fmt.Printf("m的类型为：%s，m的值为：%v\n", reflect.TypeOf(m), m)
+	fmt.Printf("sex的类型为：%s，sex的值为：\"%v\"\n", reflect.TypeOf(sex), sex)
 
 	// 定义变量并赋值
 	var h int = 100
 	var x, y int = 10, 20
 	var name, age = "Godfrey", 18
 
-	fmt.Println(h, x, y, name, age)
+	fmt.Printf("h=%v, x=%v, y=%v, name=%v, age=%v", h, x, y, name, age)
 }
 ```
 输出：
 ```text
-0 false  0 0 0 0 false 
-100 10 20 Godfrey 18
+a的类型为：int，a的值为：0
+b的类型为：bool，b的值为：false。
+str的类型为：string，str的值为：""
+d的类型为：int，d的值为：0
+e的类型为：int，e的值为：0
+i的类型为：int，i的值为：0
+j的类型为：int，j的值为：0
+m的类型为：bool，m的值为：false
+sex的类型为：string，sex的值为：""
+h=100, x=10, y=20, name=Godfrey, age=18
 ```
 
 示例2：
@@ -89,7 +108,7 @@ hello
 0
 ```
 
-使用 := 可以快速创建一个函数内部的变量，包括初始化声明与复制两大部分。以下几点需要注意：
+使用 := 可以快速创建一个函数内部的变量，包括初始化声明与赋值两大部分。以下几点需要注意：
 
 * 同一个代码块内不能多次声明同一个变量
 
