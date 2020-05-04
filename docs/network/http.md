@@ -24,7 +24,7 @@ func (c *Client) Do(req *Request) (resp *Response, err error)
 
 1）http.Get()
 
-请求一个网络资源，只需使用 http.Get() 方法（等价于 http.DefaultClient.Get()） 即可。
+请求一个网络资源，只需使用 http.Get() 方法即可，等价于 http.DefaultClient.Get()。
 
 示例如下：
 ```text
@@ -87,12 +87,12 @@ if err != nil {
 
 ### 封装
 
-除了基本的HTTP操作，Go语言标准库暴露了比较底层的HTTP相关库。可以让开发者基于这些库定制HTTP服务器和使用HTTP服务。
+除了基本的HTTP操作，Go语言标准库开放了比较底层的HTTP相关库。可以让开发者基于这些库定制HTTP服务器和使用HTTP服务。
 
 1）自定义 http.Client
 
 上面使用的 http.Get()、http.Post()、http.PostForm()和http.Head()方法都是在http.DefaultClient的基础上进行操作的，如 http.Get() 等价于 http.DefaultClient.Get()，其它同理。
-说明，存在默认的Client，也就是说 可以自定义 Client。
+说明存在默认的Client，也就是说 可以自定义 Client。
 
 Go语言标准库中，http.Client类型包含了3个公共数据成员：Transport RoundTripper、CheckRedirect func(req *Request, via []*Request) error、Jar CookieJar。
 

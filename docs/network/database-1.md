@@ -1,6 +1,6 @@
 # MySQL数据库
 
-目前网站开发中使用最多数据库是MySQL，MySQL以免费、开源、使用方便为优势，成为了web开发的后端数据库存储引擎。
+目前网站开发中使用最多的数据库是MySQL，MySQL以免费、开源、使用方便为优势，成为了web开发的后端数据库存储引擎。
 
 Go语言中支持MySQL的驱动比较多，有些是支持 database/sql 标准，而有些是采用自己实现接口。常用的有如下几种：
 
@@ -93,10 +93,14 @@ func checkError(err error) {
 ```
 
 sql.Open() 函数用来打开一个注册过的数据库驱动，go-sql-driver中注册了MySQL这个数据库驱动，第二个参数是DSN（Data Source Name），它支持如下格式：
+
  * user@uinx(/path/to/socket)/dbname?charset=utf8
+
  * user:password@tcp(localhost:3306)/dbname?charset=utf8
+
  * user:password@/dbname
- * user:password@tcp([de:ad:be:ef::ca:fe]:80)/dbname
+
+ * user:password@tcp([de\:ad\:be\:ef\::ca\:fe]:80)/dbname
 
 !!! note ""
     传入的参数都是 =? 对应的数据，这样做的方式可以在一定程度上防止SQL注入。

@@ -1,4 +1,4 @@
-# UDP Scoket
+# UDP Socket
 
 Go语言包中处理 UDP Socket 和 TCP Socket 不同的地方就是在服务器端处理多个客户端请求数据包的方式不同，UDP缺少对客户端连接请求的 Accept函数。
 

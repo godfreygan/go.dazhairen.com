@@ -1,6 +1,6 @@
 # Dial()函数
 
-Go语言中 Socket编程 的API都在 net包 中，GO语言提供了 Dial函数 来连接服务器，使用Listen监听，Accept接收连接，所以Go语言的网络编程和其它编程语言一样（PHP、Java）一样有着相似的API。
+Go语言中 Socket编程 的API都在 net包 中，Go语言提供了 Dial函数 来连接服务器，使用Listen监听，Accept接收连接，所以Go语言的网络编程和其它编程语言一样（PHP、Java）一样有着相似的API。
 
 Go语言标准库对传统的 Socket编程 过程进行了抽象和封装，无论是使用什么协议，建立什么形式的连接，都只需调用net.Dial（）即可。
 

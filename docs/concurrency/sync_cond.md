@@ -25,8 +25,11 @@ cond := sync.NewCond(new(sync.Mutex))
 
 * func (c *Cond) Wait()
 该函数的作用有如下三点：
+
     1) 阻塞等待条件变量满足
+
     2) 释放已掌握的互斥锁相当于cond.L.Unlock()。 注意：两步为一个原子操作。
+
     3) 当被唤醒，Wait()函数返回时，解除阻塞并重新获取互斥锁。相当于cond.L.Lock()
 
 * func (c *Cond) Signal()

@@ -15,7 +15,7 @@ dict := make(map[string]int)
 // 创建一个映射，键和值的类型都是string，使用键值对初始化映射
 dict1 := map[string]string{"red": "#da1337", "orange": "#e95a22"}
 
-// 创建一个映射，所用字符串切片作为键，将会报错
+// 创建一个映射，使用字符串切片作为键，将会报错
 //dict2 := map[[]string]int{}
 //invilid map key type []string 
 

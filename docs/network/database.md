@@ -15,7 +15,7 @@ Go语言与PHP不同的地方就是Go语言官方没有提供数据库驱动，�
 
 1）sql.Register
 
-这个函数是用来注册数据库驱动的，第三方开发者开发数据库驱动时，都会实现 init函数 ，在 init函数 里面都会调用这个 Register(nama string, driver driver.Driver) 来完成本驱动的注册。
+这个函数是用来注册数据库驱动的，第三方开发者开发数据库驱动时，都会实现 init函数 ，在 init函数 里面都会调用这个 Register(name string, driver driver.Driver) 来完成本驱动的注册。
 
 如：
 ```text
@@ -70,7 +70,7 @@ type Conn interface {
 }
 ```
 
-Prepare() 方法返回与当前连接相关的执行SQL语句的准备状态，可以进行查询、删除、等操组。
+Prepare() 方法返回与当前连接相关的执行SQL语句的准备状态，可以进行查询、删除、等操作。
 
 Close() 方法是关闭当前的连接，执行释放连接拥有的资源等清理工作。
 

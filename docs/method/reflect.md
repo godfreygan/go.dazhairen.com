@@ -11,10 +11,11 @@
 变量的最基本信息就是类型和值：反射包的Type用来表示一个Go语言类型，反射包的Value为Go值提供了反射接口。
 
 两个简单的方法：reflect.TypeOf 和 reflect.ValueOf，返回被检查对象的类型和值。  
-例如，x被定义为 var x float64 = 3.14，那么 reflect.TypeOf(x) 返回 float64，reflect.ValueOf(x) 返回 <float64 Value>。
+例如，x被定义为 var x float64 = 3.14，那么 reflect.TypeOf(x) 返回 float64，reflect.ValueOf(x) 返回 `<float64 Value>`。
 
 实际上，反射通过检查一个接口的值，把变量转换成空接口。从函数签名可以明显看出来：
 >func TypeOf(i interface{}) Type
+
 >func ValueOf(i interface{}) Value
 
 示例：
@@ -100,7 +101,8 @@ v的Elem是： 3.1415
 
 ## 反射结构
 
-有时需要反射一个结构类型：NumField() 方法返回结构内的字段数量；通过一个for循环用索引取得每个字段的值 Filed(i) 。
+有时需要反射一个结构类型：NumField() 方法返回结构内的字段数量；通过一个for循环用索引取得每个字段的值 Field(i) 。
+
 示例：
 ```go
 package main
