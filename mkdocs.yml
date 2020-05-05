@@ -147,18 +147,23 @@ nav:
           - 2.1. 解析XML: files/xml-unmarshal.md
           - 2.2. 生成XML: files/xml-marshal.md
       - 3. JSON处理:
-          - 3.0 JSON处理: files/json.md
+          - 3.0. JSON处理: files/json.md
           - 3.1. 解析JSON: files/json-unmarshal.md
           - 3.2. 生成JSON: files/json-marshal.md
-      - 4. 日志记录: files/logs.md
-      - 5. 压缩: files/compress.md
-  - 十. 内存管理:
-      - 1. 内存分配: memory/allocation.md
-      - 2. TCMalloc: memory/tcmalloc.md
-      - 3. Mspan（内存管理器）: memory/mspan.md
-      - 4. 垃圾回收: memory/grabage_collection.md
-  - 十一. 其他:
+      - 4. 日志记录:
+          - 4.0. 内置日志: files/logs.md
+          - 4.1. Logrus: files/logs-logrus.md
+          - 4.2. Seelog: files/logs-seelog.md
+      - 5. 压缩:
+          - 5.1. 打包与解包: files/archive.md
+          - 5.2. 压缩与解压: files/compress.md
+#  - 十. 内存管理:
+#      - 1. 内存分配: memory/allocation.md
+#      - 2. TCMalloc: memory/tcmalloc.md
+#      - 3. Mspan（内存管理器）: memory/mspan.md
+#      - 4. 垃圾回收: memory/grabage_collection.md
+  - 十. 其他:
       - 1. 字符串处理: other/string.md
       - 2. 并发、事件驱动等: other/concurrent.md
-  - 十二. 结语:
+  - 十一. 结语:
       - 联系方式: contact.md

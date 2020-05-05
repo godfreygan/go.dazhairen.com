@@ -100,15 +100,19 @@
     * [3. JSON处理](/files/json)
         * [3.1. 解析JSON](/files/json-unmarshal)
         * [3.2. 生成JSON](/files/json-marshal)
-      * [4. 日志记录](/files/logs)
-      * [5. 压缩](/files/compress)
-* [十. 内存管理](/memory/allocation)
-    * [1. 内存分配](/memory/allocation)
-    * [2. TCMalloc](/memory/tcmalloc)
-    * [3. Mspan（内存管理器）](/memory/mspan)
-    * [4. 垃圾回收](/memory/grabage_collection)
-* [十一. 其他](/other/string)
+    * [4. 日志记录](/files/logs)
+        * [4.1. logrus](/files/logs-logrus)
+        * [4.2. seelog](/files/logs-seelog)
+    * [5. 压缩](/files/archive)
+       * [5.1. 打包与解包](files/archive)
+       * [5.2. 压缩与解压](files/compress)
+<!--* [十. 内存管理](/memory/allocation)-->
+<!--    * [1. 内存分配](/memory/allocation)-->
+<!--    * [2. TCMalloc](/memory/tcmalloc)-->
+<!--    * [3. Mspan（内存管理器）](/memory/mspan)-->
+<!--    * [4. 垃圾回收](/memory/grabage_collection)-->
+* [十. 其他](/other/string)
     * [1. 字符串处理](/other/string)
     * [2. 并发、事件驱动等](/other/concurrent)
-* [十二. 结语](/contact)
+* [十一. 结语](/contact)
     * [联系方式](/contact)
