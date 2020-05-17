@@ -22,8 +22,8 @@ Go语言在数据结构方面主要有三大相关的标准包：
 
 Go语言中实现了四种基本排序算法：插入排序、归并排序、堆排序、快速排序。
 
-在对数据集合排序时，不必去考虑应当选择哪一种排序方法，只要实现了 sort.Interface 接口就可以对数据集合进行排序。接口定义如下：
-
+在对数据集合排序时，不必去考虑应当选择哪一种排序方法，只要实现了 sort.Interface 接口就可以对数据集合进行排序。  
+接口定义如下：
 ```text
 type Interface interface {
     Len()                   // 获取数据集合长度
@@ -31,6 +31,7 @@ type Interface interface {
     Swap(i, j int)          // 交换两个元素的位置，i,j 为索引
 }
 ```
+
 !!! note ""
     sort包 会根据实际数据自动选择高效的排序算法。也就是说，开发者可以不用知道是用插入排序、归并排序、还是堆排序。
 
@@ -471,6 +472,7 @@ type Interface interface {
     Pop() interface{}   // 移除并返回元素长度 Len()-1
 }
 ```
+
 通过接口定义可以看出，堆 继承自 sort.Interface，而 sort.Interface 需要实现三个方法：Len()、Less()、Swap()，加上 堆 接口定义的两个方法：Push()和Pop()。也就是说，定义一个堆就要实现五个方法。
 
 代码示例：

@@ -360,7 +360,7 @@ name：李四，sex：女，age：16
 ```
 
 !!! note ""
-    Go语言中的Stringer接口和Java中的T哦String方法类似！
+    Go语言中的Stringer接口和Java中的toString方法类似！
 
 
 ### Formatter接口

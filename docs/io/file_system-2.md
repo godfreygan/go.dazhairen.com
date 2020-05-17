@@ -514,18 +514,18 @@ line 13，matched：true，err：<nil>
 ```
 
 
-### Glod()
+### Glob()
 
-Gold() 函数返回所有匹配了模式字符串 pattern 的文件列表，匹配不到文件则返回 nil。pattern的语法和 Match 函数相同。方法定义如下：
+Golb() 函数返回所有匹配了模式字符串 pattern 的文件列表，匹配不到文件则返回 nil。pattern的语法和 Match 函数相同。方法定义如下：
 
 ```text
-func Glod(pattern string) (matches []string, err error)
+func Glob(pattern string) (matches []string, err error)
 ```
 
 !!! note ""
-    Glod() 会忽略任何文件系统相关错误，如读目录引发的I/O错误。其它的错误和 Match() 一样，在pattern不合法时，返回 filepath.ErrBadPattern。
+    Glob() 会忽略任何文件系统相关错误，如读目录引发的I/O错误。其它的错误和 Match() 一样，在pattern不合法时，返回 filepath.ErrBadPattern。
 
-Glod() 常见的用法是用于读取某个目录下的相关文件，示例：
+Glob() 常见的用法是用于读取某个目录下的相关文件，示例：
 ```go
 package main
 
